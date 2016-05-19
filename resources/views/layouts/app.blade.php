@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Monitoring System for Banner XE</title>
+    <title>Admin Console - Simplify IT</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -36,7 +36,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{{ url('/')}}">MonitorMe</a>
+          <a class="navbar-brand" href="{{ url('/')}}">Simplify IT</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse ">
           <ul class="nav navbar-nav navbar-right hidden-sm hidden-md hidden-lg">

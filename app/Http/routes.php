@@ -12,7 +12,17 @@
 */
 
 Route::get('/', function () {
-	Auth::loginUsingId(1);
     return view('welcome');
 });
 
+Route::get('admin/users', 'UsersController@index');
+Route::post('admin/users/create', 'UsersController@create');
+
+Route::get('admin/roles', 'RolesController@index');
+
+Route::get('admin/permissions', 'PermissionsController@index');
+
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
