@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Role;
+use App\Permission;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -32,9 +33,11 @@ class User extends Authenticatable
 
     public function assignRole($role)
     {
-        return $this->roles()->save(
-            Role::whereName($role)->firstOrFail()
-        );
+        if(is_string($role))
+        {
+            $role = Role::whereName($role)->firstOrFail();
+        }
+        return $this->roles()->save($role);
     }
 
     public function hasRole($role)

@@ -3,7 +3,7 @@
 	<ul class="list-group">
 		@foreach($users as $user)
 			<li class="list-group-item">
-				{{ $user->name }} <span class="pull-right">View</span>
+				{{ $user->name }} <span class="pull-right"><a href="{{ url('admin/users', [$user->id] )}}">View</a></span>
 			</li>
 		@endforeach
 	</ul>

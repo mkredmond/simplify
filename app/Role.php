@@ -12,8 +12,22 @@ class Role extends Model
     	return $this->belongsToMany(Permission::class);
     }
 
-    public function givePermissionTo(Permission $permission)
+    public function givePermissionTo($permission)
     {
+    	if(is_string($permission))
+    	{
+    		$permission = Permission::whereName($permission)->firstOrFail();
+    	}
     	return $this->permissions()->save($permission);
+    }
+
+    public function hasPermission($permission)
+    {
+    	if(is_string($permission))
+    	{
+    		return $this->permissions->contains('name', $permission);
+    	}
+
+    	return (bool) $permission->intersect($this->permissions)->count();
     }
 }
